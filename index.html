@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zell's Prestige | Mobil Mewah Terbaik</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR (desktop only) -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">
+      <span class="loader-b">B</span>
+      <span class="loader-m">M</span>
+      <span class="loader-w">W</span>
+    </div>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+  </div>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links" id="mobileLinks">
+      <li><a href="#models" onclick="closeMenu()">Models</a></li>
+      <li><a href="#featured" onclick="closeMenu()">Featured</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#contact" onclick="closeMenu()" class="mobile-cta">Test Drive</a></li>
+    </ul>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a class="nav-logo" href="#">Zell's<span>Prestige</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#models">Models</a></li>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Test Drive</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO PARALLAX -->
+  <section class="hero" id="hero">
+    <!-- Parallax layers -->
+    <div class="parallax-layer layer-bg" id="layerBg"></div>
+    <div class="parallax-layer layer-grid" id="layerGrid"></div>
+    <div class="parallax-layer layer-glow" id="layerGlow"></div>
+
+    <!-- Road / ground line -->
+    <div class="hero-road" id="heroRoad">
+      <div class="road-line"></div>
+      <div class="road-line"></div>
+      <div class="road-line"></div>
+    </div>
+
+    <!-- Car scene -->
+    <div class="hero-car-scene" id="heroCarScene">
+      <div class="car-shadow"></div>
+      <div class="car-glow-floor"></div>
+      <img
+        src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=700&q=80&auto=format&fit=crop"
+        alt="BMW M4"
+        class="hero-car-img"
+        id="heroCar"
+      />
+      <!-- Wheel spin illusion -->
+      <div class="wheel wheel-front"></div>
+      <div class="wheel wheel-rear"></div>
+    </div>
+
+    <!-- Speed lines -->
+    <div class="speed-lines" id="speedLines">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Content -->
+    <div class="hero-content" id="heroContent">
+      <p class="hero-label">Koleksi Eksklusif 2025</p>
+      <h1 class="hero-title">
+        Berkendara<br />
+        <span class="hero-accent">Tanpa Kompromi.</span>
+      </h1>
+      <p class="hero-desc">Rasakan perpaduan performa, teknologi, dan kemewahan sejati dalam setiap kilometer yang kamu tempuh.</p>
+      <div class="hero-actions">
+        <a href="#models" class="btn-primary">Lihat Koleksi</a>
+        <a href="#contact" class="btn-ghost">Jadwal Test Drive</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Unit Terjual</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Tahun Pengalaman</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Kepuasan Klien</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MODELS -->
+  <section class="models" id="models">
+    <div class="section-header">
+      <p class="section-label">Lineup Terbaru</p>
+      <h2 class="section-title">Pilih Model<br /><span>Favoritmu</span></h2>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="sedan">Sedan</button>
+      <button class="filter-btn" data-filter="suv">SUV</button>
+      <button class="filter-btn" data-filter="sport">Sport</button>
+    </div>
+    <div class="cards-grid" id="carsGrid">
+
+      <div class="car-card" data-category="sedan">
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=700&q=80&auto=format&fit=crop" alt="BMW 3 Series" class="lazy" />
+          <span class="card-badge">Bestseller</span>
+        </div>
+        <div class="card-info">
+          <div class="card-top"><h3>BMW 3 Series</h3><span class="card-year">2025</span></div>
+          <p class="card-spec">2.0L TwinPower Turbo · 258 HP · 0–100 km/h 5.8s</p>
+          <div class="card-bottom">
+            <span class="card-price">Rp 820 Juta</span>
+            <button class="card-btn" onclick="openModal('BMW 3 Series','Rp 820 Juta','2.0L TwinPower Turbo · 258 HP · 0–100 5.8s','https://images.unsplash.com/photo-1555215695-3004980ad54e?w=700&q=80&auto=format&fit=crop')">Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="suv">
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80&auto=format&fit=crop" alt="BMW X5" class="lazy" />
+          <span class="card-badge new">New</span>
+        </div>
+        <div class="card-info">
+          <div class="card-top"><h3>BMW X5</h3><span class="card-year">2025</span></div>
+          <p class="card-spec">3.0L Inline-6 · 340 HP · xDrive AWD</p>
+          <div class="card-bottom">
+            <span class="card-price">Rp 1.45 Miliar</span>
+            <button class="card-btn" onclick="openModal('BMW X5','Rp 1.45 Miliar','3.0L Inline-6 · 340 HP · xDrive AWD','https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80&auto=format&fit=crop')">Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="sport">
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=700&q=80&auto=format&fit=crop" alt="BMW M3" class="lazy" />
+          <span class="card-badge hot">Hot</span>
+        </div>
+        <div class="card-info">
+          <div class="card-top"><h3>BMW M3 Competition</h3><span class="card-year">2025</span></div>
+          <p class="card-spec">3.0L M TwinPower · 510 HP · 0–100 km/h 3.5s</p>
+          <div class="card-bottom">
+            <span class="card-price">Rp 2.1 Miliar</span>
+            <button class="card-btn" onclick="openModal('BMW M3 Competition','Rp 2.1 Miliar','3.0L M TwinPower · 510 HP · 0–100 3.5s','https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=700&q=80&auto=format&fit=crop')">Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="suv">
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=700&q=80&auto=format&fit=crop" alt="BMW X3" class="lazy" />
+        </div>
+        <div class="card-info">
+          <div class="card-top"><h3>BMW X3</h3><span class="card-year">2025</span></div>
+          <p class="card-spec">2.0L TwinPower · 248 HP · xDrive AWD</p>
+          <div class="card-bottom">
+            <span class="card-price">Rp 985 Juta</span>
+            <button class="card-btn" onclick="openModal('BMW X3','Rp 985 Juta','2.0L TwinPower · 248 HP · xDrive AWD','https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=700&q=80&auto=format&fit=crop')">Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="sedan">
+        <div class="card-img-wrap">
+          <img data-src="w.png" alt="BMW 7 Series" class="lazy" />
+          <span class="card-badge">Premium</span>
+        </div>
+        <div class="card-info">
+          <div class="card-top"><h3>BMW 7 Series</h3><span class="card-year">2025</span></div>
+          <p class="card-spec">3.0L Inline-6 Hybrid · 394 HP · xDrive</p>
+          <div class="card-bottom">
+            <span class="card-price">Rp 2.85 Miliar</span>
+            <button class="card-btn" onclick="openModal('BMW 7 Series','Rp 2.85 Miliar','3.0L Inline-6 Hybrid · 394 HP · xDrive','w.png')">Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="sport">
+        <div class="card-img-wrap">
+          <img data-src="y.png" alt="BMW Z4" class="lazy" />
+          <span class="card-badge new">Limited</span>
+        </div>
+        <div class="card-info">
+          <div class="card-top"><h3>BMW Z4 M40i</h3><span class="card-year">2025</span></div>
+          <p class="card-spec">3.0L TwinPower · 382 HP · Roadster · 0–100 4.5s</p>
+          <div class="card-bottom">
+            <span class="card-price">Rp 1.75 Miliar</span>
+            <button class="card-btn" onclick="openModal('BMW Z4 M40i','Rp 1.75 Miliar','3.0L TwinPower · 382 HP · Roadster','y.png')">Detail</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <span>The Ultimate Driving Machine</span><span class="dot">·</span>
+      <span>Sheer Driving Pleasure</span><span class="dot">·</span>
+      <span>Born to Perform</span><span class="dot">·</span>
+      <span>Precision Engineering</span><span class="dot">·</span>
+      <span>The Ultimate Driving Machine</span><span class="dot">·</span>
+      <span>Sheer Driving Pleasure</span><span class="dot">·</span>
+      <span>Born to Perform</span><span class="dot">·</span>
+      <span>Precision Engineering</span><span class="dot">·</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-label">Tentang Kami</p>
+      <h2 class="section-title">Bukan Sekadar<br /><span>Jual Mobil</span></h2>
+      <p class="about-desc">BMW Prestige adalah dealer resmi premium dengan pengalaman lebih dari 15 tahun. Kami percaya tiap orang berhak punya pengalaman berkendara terbaik. Tim kami siap bantu kamu dari konsultasi sampai after-sales service.</p>
+      <ul class="about-list">
+        <li>Garansi resmi BMW Indonesia</li>
+        <li>Kredit mulai 0% bunga 12 bulan</li>
+        <li>Trade-in dengan harga terbaik</li>
+        <li>Free servis 3 tahun pertama</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Hubungi Kami</a>
+    </div>
+    <div class="about-visual">
+      <div class="about-img-main">
+        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&q=80&auto=format&fit=crop" alt="BMW M8" crossorigin="anonymous" />
+      </div>
+      <div class="about-badge-float">
+        <span class="badge-num">15+</span>
+        <span class="badge-text">Tahun Kepercayaan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="featured">
+    <div class="section-header">
+      <p class="section-label">Kata Mereka</p>
+      <h2 class="section-title">Klien <span>Puas</span> Bicara</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-text">"Prosesnya gampang banget, ga ribet. Langsung acc kredit, 3 hari udah bisa bawa pulang BMW X5. Recommended banget!"</p>
+        <div class="testi-user">
+          <div class="testi-avatar">RH</div>
+          <div><span class="testi-name">Rizky Hartono</span><span class="testi-role">CEO Startup · Jakarta</span></div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+      <div class="testi-card featured-testi">
+        <p class="testi-text">"M3 Competition itu literally ngerubah cara aku nyetir. Tiap hari pengen bawa keliling kota terus. Worth every penny!"</p>
+        <div class="testi-user">
+          <div class="testi-avatar">AS</div>
+          <div><span class="testi-name">Aditya Santoso</span><span class="testi-role">Content Creator · Bandung</span></div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">"Trade-in mobil lama dapet harga yang fair. Upgrade ke BMW 7 Series rasanya langit beda sama bumi. Pelayanannya juga top!"</p>
+        <div class="testi-user">
+          <div class="testi-avatar">DW</div>
+          <div><span class="testi-name">Diana Wijaya</span><span class="testi-role">Pengusaha · Surabaya</span></div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-left">
+      <p class="section-label">Mulai Sekarang</p>
+      <h2 class="section-title">Jadwalkan<br /><span>Test Drive</span></h2>
+      <p class="contact-desc">Gratis, tanpa komitmen. Rasakan sendiri bedanya BMW.</p>
+      <div class="contact-info">
+        <div class="info-item"><span class="info-icon">📍</span><span>Jl. Sudirman No. 88, Jakarta Selatan</span></div>
+        <div class="info-item"><span class="info-icon">📞</span><span>+62 877 3844 1668</span></div>
+        <div class="info-item"><span class="info-icon">📧</span><span>Zell@bmwprestige.id</span></div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" placeholder="Nama kamu" id="fName" />
+      </div>
+      <div class="form-group">
+        <label>Nomor WhatsApp</label>
+        <input type="tel" placeholder="+62 8xx xxxx xxxx" id="fPhone" />
+      </div>
+      <div class="form-group">
+        <label>Model yang Diminati</label>
+        <select id="fModel">
+          <option value=""disabled selected>Pilih model</option>
+          <option>BMW 3 Series</option>
+          <option>BMW X3</option>
+          <option>BMW X5</option>
+          <option>BMW M3 Competition</option>
+          <option>BMW 7 Series</option>
+          <option>BMW Z4 M40i</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Pesan (Opsional)</label>
+        <textarea placeholder="Ada pertanyaan lain?" id="fMsg" rows="3"></textarea>
+      </div>
+      <button class="btn-primary full-btn" onclick="submitForm()">Kirim &amp; Hubungi Kami</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">Zell's<span>Prestige</span></span>
+        <p>Dealer resmi BMW premium. Pengalaman berkendara terbaik sejak 2009.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#models">Models</a>
+        <a href="#featured">Testimoni</a>
+        <a href="#about">About</a>
+        <a href="#contact">Test Drive</a>
+      </div>
+      <div class="footer-links">
+        <h4>Sosial Media</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="https://wa.me/6287738441668?">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 BMW Prestige. Semua harga belum termasuk pajak.</span>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img class="modal-img" id="modalImg" src="" alt="" />
+      <div class="modal-body">
+        <h3 id="modalName"></h3>
+        <p id="modalSpec" class="modal-spec"></p>
+        <span id="modalPrice" class="modal-price"></span>
+        <a href="#contact" class="btn-primary" onclick="closeModal()">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
