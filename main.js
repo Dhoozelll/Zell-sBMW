@@ -144,7 +144,7 @@ function submitForm() {
     return;
   }
   const msg = `Halo BMW Prestige! Saya ${name} tertarik dengan ${model}. Nomor WA: ${phone}`;
-  window.open(`https://wa.me/6287738441668?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(`https://wa.me/6281394987839?text=${encodeURIComponent(msg)}`, '_blank');
   showToast('Yeay! Cek WhatsApp kamu ya!', 'success');
   document.getElementById('fName').value = '';
   document.getElementById('fPhone').value = '';
